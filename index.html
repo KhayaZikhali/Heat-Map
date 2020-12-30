@@ -56,15 +56,16 @@ const w = 1200;
 const h = 600;
 const padding = 80;
 
-var parseTime = d3.timeParse("%D %M %Y");
+var parseTime = d3.timeParse("%Y");
+
 var dates = [];
-
-
 for (let obj of dataset) {
 dates.push(parseTime(obj["year"]));
-}
-console.log(dates)
+};
+
 var domain = d3.extent(dates)
+console.log(domain)
+
 
 // scale for the yAxis
 const yScale = d3.scalePoint()
@@ -73,7 +74,7 @@ const yScale = d3.scalePoint()
 
 // scale for the xAxis
 const xScale = d3.scaleTime()
-                 .domain([d3.min(dataset, (d) => d["year"]), d3.max(dataset, (d) => d['year']*1000) ])
+                 .domain(domain)
                  .range([padding, w])
 
 const yAxis = d3.axisLeft(yScale);  
@@ -84,15 +85,6 @@ const svg = d3.select("body")
               .append("svg")
 
 // properties of the 
-svg.selectAll("rect")
-   .data(dataset)
-   .enter()
-   .append("rect")
-   .attr("class", "cell")
-   .attr("x" , 1 )
-   .attr("y" , 2)
-   .attr("fill", "blue")
-
     // xAxis
 svg.append("g")
    .attr("class", "xAxis")
@@ -120,12 +112,16 @@ svg.append("text")
 svg.append("text")
    .attr("class", "xlabel")
    .attr("text-anchor", "end")
-   .attr("y", h)
+   .attr("y", h + 50)
    .attr("dy", "0em")
    .attr("transform", "rotate(-180)")
    .attr("x", 700)
    .attr("dx", "0em")
-   .attr("Add xAxis label here")
+   .attr("transform", "rotate(0)")
+
+   .text("Add xAxis label here")
+
+
   </script>
 <footer>
 
