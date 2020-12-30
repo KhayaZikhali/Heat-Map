@@ -1,0 +1,38 @@
+body{
+    background-color:aliceblue;
+}
+
+nav {
+    width: 100%;
+    height: calc(fit-height + 10px);
+    background-color:azure;
+    font-size:larger;
+    font-weight: bolder;
+    position: fixed;
+    top:0%;
+    left:0;
+    border-bottom: 1px solid lightblue;
+    justify-content: space-around;
+}
+
+h1 {
+    font-weight: bolder;
+    font-stretch: ultra-condensed;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color : olivedrab;
+    margin:20px;
+}
+
+svg {
+    display:block;
+    background-color:oldlace;
+    width:100vw;
+    height:800;
+    margin:auto;
+}
+
+.cell { 
+    height:1005px;
+    width:2px;
+    color : blue;
+}
