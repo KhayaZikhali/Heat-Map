@@ -75,3 +75,6 @@ svg.append("text")
 .attr("dx", "0em")
 .attr("transform", "rotate(0)")
 .text("Years (" + d3.min(dataset, (d) => d["year"] + " - " + d3.max(dataset, (d) => d["year"] ) + " )"))
+
+// ! CRAEATE YOUR OWN LOG AN DMAKE A SIMPLE TRIBUTE PAGE WITH ANIMATIONS 
+// !! YOU CREATED A WATCH LIST FOLLOW SIT 
