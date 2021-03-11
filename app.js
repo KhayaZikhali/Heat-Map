@@ -16,13 +16,14 @@ var canvas = d3.select("svg").attr({
     width : width + margin.left + margin.right
 });
 
+var title = document.querySelector(".title").textContent = "Temperature Variations from the year 1753 to 2015"
 
 var group = canvas.append("g")
         .attr({
-          transform: "translate(" + margin.left +","+ margin.top + ")" 
+          transform: "translate(" + margin.left +","+ margin.top + " )" 
          })
 
-var div = d3.select(".tooltip")
+var div = d3.select(".tooltip");
 var xScale = d3.time.scale().range([0, width])
 var yScale = d3.scale.ordinal().domain(months).rangeBands([0, height]);
 var colorScale = d3.scale.quantize().range(color);
@@ -40,7 +41,7 @@ d3.json(url , (data) => {
 
 // declaring the Xscale 
 xScale.domain(d3.extent(data, (data)=> {
-        return data.year
+        return data.year;
 }));
 // Colors for the bars 
 
@@ -71,6 +72,7 @@ var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(12);
       transform: 'translate(0 , 0)'
     })
     .call(yAxis)
+
  //append g to the svg
   group.selectAll('g')
     .data(data)
@@ -100,7 +102,7 @@ var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(12);
         .style("opacity", 0.8)
         .style({
             left: d3.event.pageX + "px",
-            right : d3.event.pageX + "px"
+            top : d3.event.pageY + "px"
         })
        div.html("<p>Year:" + d3.time.format("%Y")(d.year) + " </p> <p>value : " +  (8.66 + d.variance.toFixed(2)) + " </p><p> " + d.month +"</p>")
     })

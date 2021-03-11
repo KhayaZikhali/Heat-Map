@@ -2,9 +2,21 @@ body {
   background-color: lightgray;
 }
 
+.title {
+  position: absolute;
+  left: 50vw;
+  top: 0vh;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .graph {
   margin: 0 auto;
   background-color: white;
+  margin-top: 10vh;
 }
 
 .tooltip {
