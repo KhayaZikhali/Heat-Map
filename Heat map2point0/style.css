@@ -2,6 +2,7 @@ body {
     background-color:lightgray;   
 }
 
+
 .graph {
     margin: 0 auto;
     background-color: white; 
@@ -14,4 +15,3 @@ body {
     opacity: 0;
     color: black;
     position: absolute;
-  }
